@@ -1,46 +1,57 @@
 # Autonomous UAV Swarm Coordination System
 
-A multi-UAV swarm simulation framework developed using **CoppeliaSim**, **ROS**, and **Python** for autonomous formation control, synchronized coordination, and precision payload deployment.
+<p align="center">
+  <img src="image1.png" width="800"/>
+</p>
 
-This project demonstrates cooperative drone swarm behavior using leader-follower architecture, PID-based stabilization, and real-time communication between multiple UAV agents in a simulated environment.
+<p align="center">
+  Multi-UAV autonomous swarm simulation using CoppeliaSim, ROS concepts, Python-based coordination, and real-time formation control.
+</p>
 
 ---
 
-# Project Overview
+# Overview
 
-Modern UAV systems are rapidly evolving toward autonomous swarm intelligence for applications such as:
+This project presents the design and implementation of an **Autonomous UAV Swarm Coordination System** capable of:
 
-- Surveillance
-- Defense systems
-- Search & rescue
-- Disaster response
+- Multi-drone synchronized movement
+- Autonomous formation control
+- Precision payload deployment
+- Communication delay handling
+- Leader-follower coordination
+- Dynamic mission behavior simulation
+
+The system was developed and tested using **CoppeliaSim**, Python scripting, and ROS experimentation to simulate real-world swarm intelligence and autonomous UAV coordination scenarios.
+
+---
+
+# Project Motivation
+
+Modern UAV systems are rapidly moving toward:
+
 - Autonomous coordination
-- Precision payload delivery
+- Distributed intelligence
+- Swarm-based defense systems
+- Search & rescue operations
+- Precision aerial missions
+- Multi-agent robotics
 
-This project focuses on designing and simulating a coordinated UAV swarm capable of:
-
-- Maintaining geometric formations
-- Performing synchronized movement
-- Executing autonomous payload release
-- Handling communication delays
-- Recovering from leader failure scenarios
-
-The entire system was developed and tested inside **CoppeliaSim** with Python-based control logic and ROS experimentation.
+This project explores how multiple UAVs can collaboratively operate in a coordinated swarm while maintaining formation stability and synchronized behavior in dynamic environments.
 
 ---
 
 # Key Features
 
-- Multi-UAV swarm coordination
-- Autonomous formation control
+- Autonomous UAV swarm simulation
+- Multi-agent coordination
+- Formation control algorithms
 - Leader-follower architecture
-- Dynamic formation maintenance
-- Precision payload deployment
-- PID-based flight stabilization
-- Communication delay tolerance
+- PID-based stabilization
 - Real-time synchronization
-- Swarm scalability experimentation
-- Autonomous mission behavior simulation
+- Payload deployment mechanism
+- Communication delay tolerance
+- Dynamic UAV formations
+- Distributed control concepts
 
 ---
 
@@ -49,74 +60,77 @@ The entire system was developed and tested inside **CoppeliaSim** with Python-ba
 | Technology | Purpose |
 |---|---|
 | CoppeliaSim | UAV simulation environment |
+| Python | Swarm coordination logic |
+| Lua Scripts | Embedded drone scripting |
 | ROS | Robotics middleware experimentation |
-| Python | Swarm coordination and control |
-| Lua Scripts | In-simulation drone scripting |
 | PID Controllers | Flight stabilization |
-| Remote API | Communication between simulator and controller |
+| Remote API | External simulation control |
 
 ---
 
 # Simulation Platforms Explored
 
-During development, multiple UAV simulation environments were explored and tested:
+During development, multiple UAV simulation environments were explored:
 
-- Gazebo + ROS
-- ArduPilot
-- Microsoft AirSim
-- Webots
-- CoppeliaSim
+| Platform | Status |
+|---|---|
+| Gazebo + ROS | Version compatibility issues |
+| ArduPilot | Initial experimentation |
+| Microsoft AirSim | Plugin and GPU limitations |
+| Webots | Multi-drone integration challenges |
+| CoppeliaSim + Python | Successful implementation |
 
-After extensive experimentation and compatibility testing, **CoppeliaSim + Python-based coordination** provided the most stable implementation for swarm simulation.
+This experimentation helped build deeper understanding of UAV simulation ecosystems and autonomous robotics workflows.
 
 ---
 
 # System Architecture
 
-The system follows a **leader-follower swarm architecture**:
+The project follows a **leader-follower swarm coordination architecture**.
 
-- One UAV acts as the leader
-- Follower drones maintain fixed spatial offsets
-- Formation updates occur dynamically in real-time
-- Communication signals synchronize swarm movement
-- PID controllers stabilize motion and orientation
+### Workflow:
+1. One UAV acts as the leader
+2. Follower drones maintain predefined positional offsets
+3. PID controllers stabilize flight dynamics
+4. Synchronization logic coordinates real-time movement
+5. Communication signals propagate swarm updates
 
 ---
 
-# Core Functionalities
+# Formation Control
 
-## Formation Control
-
-The UAV swarm can maintain coordinated formations such as:
+The UAV swarm dynamically maintains coordinated formations such as:
 
 - Square formation
 - Line formation
-- Dynamic coordinated movement
+- Symmetric coordinated movement
 
-Formation logic is implemented using positional offsets relative to the leader UAV.
+Formation updates are calculated relative to the leader drone’s position using real-time positional offsets.
 
 ---
 
-## Payload Deployment
+# Payload Deployment System
 
 Each UAV includes a simulated payload release mechanism capable of:
 
-- Target-based deployment
+- Precision payload deployment
 - Sensor-triggered release
-- Coordinated synchronized actions
+- Autonomous mission execution
+
+The release system is controlled through scripted logic integrated within the simulation environment.
 
 ---
 
-## Communication & Synchronization
+# Communication & Synchronization
 
 The project simulates:
 
-- Inter-drone communication
+- Inter-UAV communication
 - Latency handling
 - Synchronization delays
-- Real-time control propagation
+- Real-time command propagation
 
-The system remains stable under moderate communication delays.
+The swarm remains stable even under moderate communication delays.
 
 ---
 
@@ -128,23 +142,23 @@ The system remains stable under moderate communication delays.
 | Payload Accuracy | ~92% successful deployment |
 | Latency Tolerance | Up to 300ms |
 | Leader Recovery | Successful swarm reformation |
-| Real-Time Response | Low control delay |
+| Response Time | Low-delay real-time control |
 
 ---
 
 # Challenges Faced
 
-During development, several engineering challenges were encountered:
+Several engineering and simulation challenges were encountered during development:
 
 - ROS version compatibility issues
-- AirSim plugin integration problems
+- AirSim plugin configuration problems
 - Multi-agent synchronization complexity
-- PID tuning for stable flight
+- PID controller tuning
 - Communication delay handling
-- Real-time simulation coordination
-- Swarm scalability limitations
+- Real-time swarm coordination
+- Simulation timing synchronization
 
-These challenges helped improve understanding of UAV systems, robotics middleware, and distributed autonomous coordination.
+These challenges significantly improved understanding of UAV systems, robotics middleware, and distributed autonomous control.
 
 ---
 
@@ -157,19 +171,20 @@ Planned future enhancements include:
 - Obstacle avoidance
 - Vision-based navigation
 - Decentralized swarm intelligence
-- Hardware deployment using Pixhawk/Raspberry Pi
-- Real-world UAV testing
-- Advanced controllers (MPC/LQR)
+- Hardware deployment using Pixhawk
+- Raspberry Pi integration
+- Advanced controllers (MPC / LQR)
 
 ---
 
-# Repository Contents
+# Repository Structure
 
 ```text
-.
+SEM4ROBOTICS/
+│
+├── demoVideo.mp4
 ├── Robotics_report.pdf
 ├── UAV swarms.pptx
-├── demoVideo.mp4
 ├── image1.png
 ├── image2.png
 └── README.md
@@ -177,45 +192,58 @@ Planned future enhancements include:
 
 ---
 
-# Demonstration
+# Demo Video
 
-## Demo Video
-
-The repository includes a simulation demo video showcasing:
+The repository includes a complete simulation demonstration video showing:
 
 - Autonomous swarm movement
 - Formation coordination
-- Multi-UAV synchronization
+- UAV synchronization
 - Payload deployment behavior
+- Real-time simulation execution
+
+## Demo Preview
+
+<p align="center">
+  <a href="demoVideo.mp4">
+    <img src="image2.png" width="700"/>
+  </a>
+</p>
+
+Click the preview image above to open the demo video.
 
 ---
 
-# Screenshots
+# Simulation Screenshots
 
-## UAV Swarm Simulation Environment
+## Swarm Formation Control
 
-Add screenshots below:
+<p align="center">
+  <img src="image1.png" width="700"/>
+</p>
 
-### Formation Coordination
-![Formation](image1.png)
+---
 
-### Multi-UAV Swarm Simulation
-![Swarm](image2.png)
+## Multi-UAV Coordination
+
+<p align="center">
+  <img src="image2.png" width="700"/>
+</p>
 
 ---
 
 # Academic Report
 
-The repository also includes:
+The repository includes the complete technical report containing:
 
-- Complete project report
-- Technical implementation details
+- System architecture
 - Control algorithms
-- System design
+- Formation logic
 - Experimental observations
 - Performance evaluation
+- Future scope
 
-File:
+## File
 - `Robotics_report.pdf`
 
 ---
@@ -232,22 +260,26 @@ Project presentation slides are included in:
 
 Potential real-world applications include:
 
-- Defense and surveillance
-- Disaster response systems
-- Autonomous reconnaissance
+- Autonomous aerial surveillance
+- Defense and countermeasure systems
+- Disaster response operations
+- Swarm intelligence research
 - Coordinated delivery systems
 - Search and rescue missions
-- Smart autonomous aerial systems
+- Multi-agent robotics research
 
 ---
 
 # Contributors
 
+## Team Members
+
 - Mukund Thakur
 - Sahil Kaushik
 - Satyendra Kumar Tandan
 
-Under the guidance of:
+## Supervised By
+
 - Dr. Shri Vishal Tripathi
 
 Department of Electronics and Communication Engineering  
@@ -257,7 +289,7 @@ IIIT Naya Raipur
 
 # Disclaimer
 
-This project is developed purely for academic research, simulation, and educational purposes.
+This project was developed for academic research, simulation, and educational purposes only.
 
 ---
 
